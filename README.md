@@ -15,7 +15,34 @@
 <img src = "src/assets/imgReadMe/dashboard.png">
 
 
-###### Observação
+##### Observação sobre o dashboard
 - Basta clicar em "ver todos" para visualizar seus horarios completos, filtrando por Mês e Ano especifico.
 
 <img src = "src/assets/imgReadMe/allschedules.png">
+
+
+## Registrar Ponto
+#### Na tela de bater ponto o usuário ao clicar no icone, será capaz de registrar seu ponto com o horario atual sendo avisado com um Pop-up em caso de sucesso ou erro ao registrar ponto.
+
+<img src = "src/assets/imgReadMe/registraponto.png">
+
+
+## Perfil do usuário
+#### Nesta tela é exibida as informações do usuário
+
+<img src = "src/assets/imgReadMe/profile.png">
+
+## HappyFriday (Registro de folga)
+#### A tela de HappyFriday permite que o usuário cadastre sua folga com antecedência e sendo exibida para seus colegas de equipe.
+
+<img src = "src/assets/imgReadMe/happyfriday.png">
+
+
+## Observação
+ - Você pode sair da conta a qualquer momento somente clicando no seu nome e em seguida em "Sair da conta", no quanto superior direto, em qualquer das telas informadas anteriormente.
+
+<img src = "src/assets/imgReadMe/logout.png">
+
+
+### Contato
+Jhonatan De Sousa Carvalho - jhonatancarv0@gmail.com
