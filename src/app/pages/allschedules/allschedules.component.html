@@ -1,19 +1,52 @@
 <div class="header bg-gradient-custom-danger pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
     <div class="header-body">
-      <!-- Card stats -->
       <div class="row">
-        <div class="col-xl-3 col-lg-6">
-          <div class="card card-stats mb-4 mb-xl-0">
+        <div class="col-xl-4 col-md-6">
+          <div class="card card-stats">
+            <!-- Card body -->
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Saldo</h5>
-                      <span class="h2 font-weight-bold mb-0">{{dashboard.Balance}} Horas</span>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Mudar Mês e Ano</h5>
+                  <span class="h2 font-weight-bold mb-0"></span>
+                  <div class="row">
+                    <div class="md-md-4">
+                      <select class="form-control" [(ngModel)]="year" >
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                      </select>
+                    </div>
+                    <span class="espacamento"></span>
+                    <div class="md-md-8">
+                      <select class="form-control" [(ngModel)]="month" >
+                        <option value="0">Janeiro</option>
+                        <option value="1">Fevereiro</option>
+                        <option value="2">Março</option>
+                        <option value="3">Abril</option>
+                        <option value="4">Maio</option>
+                        <option value="5">Junho</option>
+                        <option value="6">Julho</option>
+                        <option value="7">Agosto</option>
+                        <option value="8">Setembro</option>
+                        <option value="9">Outubro</option>
+                        <option value="10">Novembro</option>
+                        <option value="11">Dezembro</option>
+                      </select>
+                    </div>
+
+
+                  </div>
+
                 </div>
                 <div class="col-auto">
-                  <div class="icon icon-shape bg-gradient-custom-danger text-white rounded-circle shadow">
-                    <i class="ni ni-active-40"></i>
+                  <div class="icon icon-shape bg-gradient-custom-danger rounded-circle shadow">
+                    <i  (click)="getAllSchendulesMothYear(id,year,month)" class="fas fa-bell fa" style="cursor: pointer;" ></i>
+
                   </div>
                 </div>
               </div>
@@ -21,24 +54,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6">
-          <div class="card card-stats mb-4 mb-xl-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Carga Horaria</h5>
-                  <span class="h2 font-weight-bold mb-0">{{dashboard.Workload}} Horas</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-gradient-custom-danger text-white rounded-circle shadow">
-                    <i class="fas fa-chart-pie"></i>
-                  </div>
-                </div>
-              </div>
 
-            </div>
-          </div>
-        </div>
+
 
       </div>
     </div>
@@ -120,35 +137,40 @@
                 <th scope="col">Almoço</th>
                 <th scope="col">Retorno</th>
                 <th scope="col">Saida</th>
+                <th scope="col">Dia da semana</th>
                 <th scope="col">Total trabalhado</th>
               </tr>
             </thead>
-            <tbody>
-              <tr *ngFor="let j of datesDashboard">
-                <th scope="row">
-                 {{j.entry | date: "dd/M/YY"}}
-                </th>
-                <td>
-                  {{j.entry | date: 'HH:mm:ss'}}
-                </td>
-                <td>
-                  {{j.lunchTime | date: 'HH:mm:ss'}}
-                </td>
-                <td>
-                  {{j.returnLunchTime| date: 'HH:mm:ss'}}
-                </td>
-                <td>
-                  {{j.departureTime| date: 'HH:mm:ss'}}
-                </td>
+  <tbody>
 
-                <td>
-                  <i class="fas fa-arrow-down text-danger mr-3" *ngIf="j.workedHours < 8" ></i>
-                  <i class="fas fa-arrow-up text-success mr-3" *ngIf="j.workedHours > 8" ></i>
-                  <i *ngIf="j.workedHours == 8" ></i>
-                  {{j.workedHours}}
-                </td>
-              </tr>
-             </tbody>
+    <tr *ngFor="let i of schedulesMonthAux" >
+      <th scope="row">
+        {{i.entry | date:'dd/M/YY'}}
+      </th>
+      <td>
+        {{i.entry | date: 'HH:mm:ss'}}
+      </td>
+      <td>
+        {{i.lunchTime | date: 'HH:mm:ss'}}
+      </td>
+      <td>
+        {{i.returnLunchTime| date: 'HH:mm:ss'}}
+      </td>
+      <td>
+        {{i.departureTime| date: 'HH:mm:ss'}}
+      </td>
+      <td>
+        {{i.dayOfTheWeek }}
+      </td>
+
+      <td>
+        <i class="fas fa-arrow-down text-danger mr-3" *ngIf="i.workedHours < 8" ></i>
+        <i class="fas fa-arrow-up text-success mr-3" *ngIf="i.workedHours > 8" ></i>
+        <i *ngIf="i.workedHours == 8" ></i>
+        {{i.workedHours}}
+      </td>
+    </tr>
+  </tbody>
           </table>
         </div>
       </div>

@@ -52,7 +52,8 @@ export class IconsComponent implements OnInit {
   }
 
   buttonTime(id): void {
-    this.scheduleService.beattime(id)
+    if (this.schedules.departureTime == '0001-01-01T00:00:00'){
+      this.scheduleService.beattime(id)
     .subscribe(
       data => {
         this.schedules = data;
@@ -60,11 +61,15 @@ export class IconsComponent implements OnInit {
         this.schedules.departureTimeDate = new Date(this.schedules.departureTime);
         this.schedules.lunchTimeDate = new Date(this.schedules.lunchTime);
         this.schedules.returnLunchTimeDate = new Date(this.schedules.returnLunchTime);
-        this.toastr.success('Controle de Ponto.', 'Sucesso!');
+        this.toastr.success('Sucesso!');
         console.log(data);
       },
       error => {
         console.log(error);
       });
+    }
+    else {
+      this.toastr.error('Não é possivel bater ponto')
+    }
   }
 }

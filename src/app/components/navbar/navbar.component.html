@@ -20,7 +20,7 @@
         <a class="nav-link pr-0" role="button" ngbDropdownToggle>
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
-              <img alt="Image placeholder" src="https://media-exp1.licdn.com/dms/image/C5603AQGpbjQpYXM5hg/profile-displayphoto-shrink_200_200/0/1603671743598?e=1638403200&v=beta&t=KnAkDTULahkanj6iGemt2RC9i9M8qPfM5iKHybc0FCA">
+              <img alt="Image placeholder" src="https://icon-library.com/images/full_name_1346584.png">
             </span>
             <div class="media-body ml-2 d-none d-lg-block">
               <span class="mb-0 text-sm  font-weight-bold">{{user.name}}</span>
@@ -28,29 +28,18 @@
           </div>
         </a>
         <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
-          <div class=" dropdown-header noti-title">
-            <h6 class="text-overflow m-0">Bem vindo!</h6>
-          </div>
           <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
             <i class="ni ni-single-02"></i>
-            <span>My profile</span>
+            <span>Meu Perfil</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
-            <i class="ni ni-settings-gear-65"></i>
-            <span>Settings</span>
-          </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+          <a routerLinkActive="active" [routerLink]="['/allschedules']" class="dropdown-item">
             <i class="ni ni-calendar-grid-58"></i>
-            <span>Activity</span>
-          </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
-            <i class="ni ni-support-16"></i>
-            <span>Support</span>
+            <span>Histórico</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a (click)="logout()" class="dropdown-toggle" data-toggle="dropitem">
+          <a (click)="logout()" style="cursor: pointer;" class="dropdown-item">
             <i class="ni ni-user-run"></i>
-            <span>Logout</span>
+            <span>Sair da conta</span>
           </a>
         </div>
       </li>

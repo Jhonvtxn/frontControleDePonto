@@ -13,7 +13,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
+
 import { ToastrModule } from 'ngx-toastr';
+import { AllschedulesComponent } from './pages/allschedules/allschedules.component';
+import { DatePipe } from '@angular/common'
 
 @NgModule({
   imports: [
@@ -29,10 +32,11 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    AllschedulesComponent
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

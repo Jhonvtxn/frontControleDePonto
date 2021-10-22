@@ -16,6 +16,10 @@ export class SchedulesService {
     return this.http.get(`${baseUrl}/CollaboratorSchedulesByToday/${id}`);
   }
 
+  getall(id: any): Observable<Schedules> {
+    return this.http.get(`${baseUrl}/CollaboratorSchedules/${id}`);
+  }
+
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
@@ -25,5 +29,9 @@ export class SchedulesService {
     .set('id', id.toString());
     var url = `${baseUrl}/BeatTime`;
     return this.http.get(url, {params});
+  }
+
+  getallMonthYear(id: string, year: number, month: number): Observable<Schedules[]> {
+    return this.http.get<any>(`${baseUrl}/CollaboratorSchedulesByMonthAndYear?id=${id}&year=${year}&month=${month}`);
   }
 }

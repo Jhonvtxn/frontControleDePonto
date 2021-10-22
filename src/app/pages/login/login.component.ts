@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
 
   user : User;
 
-  constructor(private authenticationService:AuthenticationService,private route: ActivatedRoute,
+  constructor(private authenticationService:AuthenticationService,
+    private route: ActivatedRoute,
     private router: Router) {
     if (this.authenticationService.currentUserValue){
       this.router.navigate(['/']);

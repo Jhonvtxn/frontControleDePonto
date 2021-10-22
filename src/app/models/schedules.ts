@@ -1,3 +1,4 @@
+import {DatesDashboard} from 'src/app/models/DatesDashboard'
 export class Schedules{
   entryDate?: Date;
   lunchTimeDate?: Date;
@@ -11,5 +12,7 @@ export class Schedules{
   lunchTime?: string;
   returnLunchTime?: string;
   departureTime?: string;
-  
+  dashboardDates?: DatesDashboard;
+  dayOfTheWeek?: any;
+
 }
