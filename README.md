@@ -45,7 +45,7 @@
 
 
 ## Contato
-Jhonatan De Sousa Carvalho - jhonatancarv0@gmail.com
-- Meu [linkedin](https://www.linkedin.com/in/jhonvtan/)
+- Jhonatan De Sousa Carvalho - jhonatancarv0@gmail.com
+- [Meu Linkedin](https://www.linkedin.com/in/jhonvtan/)
 
 <p align="right">(<a href="#top">Voltar ao início</a>)</p>
